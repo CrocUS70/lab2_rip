@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}ГосОборонЗаказ{% endblock %}
+{% block header %}ГосОборонЗаказ{% endblock %}
+{% block content %}
+<table>
+    <thead>
+        <tr>
+            <th>Промышленности</th>
+            <th>Продукция</th>
+            <th>Описание</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for coms in data.com %}
+        <tr>
+                <td>{{ coms.name_company }}</td>
+                <td>{{ coms.product }}</td>
+                <td>{{ coms.description }}</td>
+                <td><a href="{% url 'product' coms.id %}">Просмотр списка продукции</a></td>
+        </tr>
+    {% empty %}
+        <li>Список пуст</li>
+    {% endfor %}
+</tbody>
+</table>
+{% endblock %}

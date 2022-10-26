@@ -1,0 +1,16 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Промышленность №{{ data.com.id }}{% endblock %}
+
+{% block content %}
+
+
+    <div>Название: {{ data.pro.name_product }}</div>
+    <div>Цена: {{ data.pro.price }}</div>
+    <div>Описание: {{ data.pro.description }}</div>
+    <ul>Карта сайта:
+        <a href="{% url 'company' %}">Список оборонзаказ</a>
+    </ul>
+{% endblock %}
+
